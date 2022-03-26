@@ -30,7 +30,7 @@ function ERC20Transfers() {
       render: (to) => getEllipsisTxt(to, 8),
     },
     {
-      title: "RollNo",
+      title: "TO Account",
       dataIndex: "to_address",
       key: "to_address",
       render: (to) => to,
