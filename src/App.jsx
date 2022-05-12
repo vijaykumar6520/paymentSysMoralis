@@ -21,9 +21,10 @@ import "./style.css";
 import QuickStart from "components/QuickStart";
 import Contract from "components/Contract/Contract";
 // import Text from "antd/lib/typography/Text";
-import {Logo} from "./components/Chains/Logos";
+import { Logo } from "./components/Chains/Logos";
 import Ramper from "components/Ramper";
 import MenuItems from "./components/MenuItems";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 const { Header } = Layout;
 // const { Header, Footer } = Layout;
 
@@ -45,7 +46,7 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     fontFamily: "Roboto, sans-serif",
-    borderBottom: "2px solid rgba(0, 0, 0, 0.06)",
+    borderBottom: "2px solid rgba(255, 143, 55, 0.06)",
     padding: "0 10px",
     boxShadow: "0 1px 10px rgb(151 164 175 / 10%)",
   },
@@ -72,7 +73,8 @@ const App = ({ isServerInfo }) => {
     <Layout style={{ height: "100vh", overflow: "auto" }}>
       <Router>
         <Header style={styles.header}>
-          <Logo/>
+          {/* <Logo/> */}
+          <NavLink to="/wallet"><Logo /></NavLink>
           <MenuItems />
           <div style={styles.headerRight}>
             <Chains />
@@ -127,7 +129,7 @@ const App = ({ isServerInfo }) => {
               <Redirect to="/wallet" />
             </Route>
             <Route path="/ethereum-boilerplate">
-              <Redirect to="/wallet" />
+              <Redirect to="/erc20balance" />
               {/* <Redirect to="/quickstart" /> */}
             </Route>
             <Route path="/nonauthenticated">
